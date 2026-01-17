@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* DAP Engineering Design System */
+
+
+@layer base {
+  :root {
+    /* DAP Custom Colors */
+    --color-dark-gray: #2C2C2C;
+    --color-slate-blue: #546E7A;
+    --color-bronze: #8B7355;
+    --color-light-bg: #F8F9FA;
+    --color-white: #FFFFFF;
+    --color-text: #5A5A5A;
+    --overlay-dark: rgba(0, 0, 0, 0.5);
+
+    /* Tailwind Theme Variables */
+    --background: 0 0% 100%; /* white */
+    --foreground: 0 0% 17%; /* dark-gray #2C2C2C */
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 17%;
+
+    --primary: 28 24% 44%; /* bronze #8B7355 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 13% 40%; /* slate-blue #546E7A */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 17% 98%; /* light-bg #F8F9FA */
+    --muted-foreground: 0 0% 35%; /* text #5A5A5A */
+
+    --accent: 28 24% 44%; /* bronze */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 16% 90%;
+    --input: 210 16% 90%;
+    --ring: 28 24% 44%; /* bronze */
+
+    --radius: 0rem;
+
+    /* Hero specific */
+    --hero-overlay: 0 0% 17%; /* dark-gray */
+    --hero-text: 0 0% 100%;
+    --hero-muted: 0 0% 70%;
+
+    --sidebar-background: 210 17% 98%;
+    --sidebar-foreground: 0 0% 17%;
+    --sidebar-primary: 28 24% 44%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 17% 95%;
+    --sidebar-accent-foreground: 0 0% 17%;
+    --sidebar-border: 210 16% 90%;
+    --sidebar-ring: 28 24% 44%;
+  }
+
+  .dark {
+    --background: 0 0% 17%; /* dark-gray */
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 20%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 20%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 28 24% 44%; /* bronze */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 13% 40%; /* slate-blue */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 25%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 28 24% 44%; /* bronze */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 28 24% 44%; /* bronze */
+
+    --hero-overlay: 0 0% 0%;
+    --hero-text: 0 0% 100%;
+    --hero-muted: 0 0% 70%;
+
+    --sidebar-background: 0 0% 20%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 28 24% 44%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 25%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 25%;
+    --sidebar-ring: 28 24% 44%;
+  }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+/* Custom DAP Utilities */
+@layer utilities {
+  .bg-dark-gray {
+    background-color: var(--color-dark-gray);
+  }
+  .bg-slate-blue {
+    background-color: var(--color-slate-blue);
+  }
+  .bg-bronze {
+    background-color: var(--color-bronze);
+  }
+  .bg-light-bg {
+    background-color: var(--color-light-bg);
+  }
+  
+  .text-dark-gray {
+    color: var(--color-dark-gray);
+  }
+  .text-slate-blue {
+    color: var(--color-slate-blue);
+  }
+  .text-bronze {
+    color: var(--color-bronze);
+  }
+  .text-custom {
+    color: var(--color-text);
+  }
+  
+  .border-bronze {
+    border-color: var(--color-bronze);
+  }
+  .border-slate-blue {
+    border-color: var(--color-slate-blue);
+  }
+
+  /* Hero animations */
+  .animate-fade-up {
+    animation: fadeUp 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-up-delay-1 {
+    animation: fadeUp 1s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-up-delay-2 {
+    animation: fadeUp 1s ease-out 0.4s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-up-delay-3 {
+    animation: fadeUp 1s ease-out 0.6s forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
